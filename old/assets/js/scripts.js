@@ -176,16 +176,20 @@ $("#settings input, #settings select").on('change', function() {
 	// The formatted string from the previous boot variables
 	var bootloaderText = '_Hold ' + bootloaderKey + ' '+ $('select[name=firstTime] option:selected').text() +'_ to enter _' + bootloader + '_.';
 	
+    var processor = $('input[name=processor]', "#settings").val();
+    var mem = $('input[name=memory]', "#settings").val();
+    var device = $('input[name=device]', "#settings").val();
+
 	if (shouldDrawCustomBootString)
 		write(FONT_X_PADDING, CANVAS_HEIGHT - (FONT_HEIGHT * 2), bootloaderText);
 
 	write(FONT_X_PADDING * 2, (FONT_HEIGHT / 2) * 1, $('input[name=type]', "#settings").val());
 	write(FONT_X_PADDING * 2, (FONT_HEIGHT / 2) * 3, copyrightLine);
 
-	write(FONT_X_PADDING, FONT_HEIGHT * 5, 'Nintendo Switch (ver '+firmwareVersion+')');
+	write(FONT_X_PADDING, FONT_HEIGHT * 5, device+' (ver '+firmwareVersion+')');
 
-	write(FONT_X_PADDING, FONT_HEIGHT * 7, 'Main Processor		: Nvidia Tegra X1 SoC');
-	write(FONT_X_PADDING, FONT_HEIGHT * 8, 'Memory Testing		: 4194000K OK');
+	write(FONT_X_PADDING, FONT_HEIGHT * 7, 'Main Processor		: '+processor);
+	write(FONT_X_PADDING, FONT_HEIGHT * 8, 'Memory Testing		: '+mem+' OK');
 
 	write(FONT_X_PADDING, FONT_HEIGHT * 9, 'Primary Master		: '+ emmcSize +' Internal Storage');
 	write(FONT_X_PADDING, FONT_HEIGHT *10, 'Primary Slave 		: '+ sdSize +' SD Card');
