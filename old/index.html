@@ -36,6 +36,10 @@
 			<div class="container">
 				<h3>Device Settings</h3>
 				<fieldset id="options">
+                    <div class="input-field">
+                        <label>Device</label>
+                        <input placeholder="Device Name" type="text" name="device" val="." style="display: none;" />
+                    </div>
 					<div class="input-field">
 						<label>Version</label>
 						<select name="firmware">
@@ -73,6 +77,14 @@
 							<option value="1.0.0">1.0.0</option>
 						</select>
 					</div>
+                    <div class="input-field">
+                        <label>Bootloader</label>
+                        <input placeholder="Bootloader Name" type="text" name="boottool" val="." style="display: none;" />
+                    </div>
+                    <div class="input-field">
+                        <label>Memory</label>
+                        <input placeholder="Memory Size" type="text" name="memory" val="." style="display: none;" />
+                    </div>
 					<div class="input-field">
 							<label>Internal Storage</label>
 							<select name="emmc">
@@ -191,7 +203,7 @@
 			<fieldset id="options">
 				<h3>About</h3>
 				<h4>What is this?</h4>
-				<p class="paragraph">This is a tool to generate Old School BIOS images that emulate classic PCs; it is intended to be used on the Nintendo Switch. Currently the only method to display a splash screen is to use <a href="https://github.com/CTCaer/hekate">Hekate</a> and enable autoboot.</p>
+				<p class="paragraph">This is a tool to generate Old School BIOS images that emulate classic PCs; it is intended to be used on your desired device.</p>
 				<h4>How do I use this?</h4>
 				<div class="paragraph">
 					<ol>
@@ -199,18 +211,9 @@
 						<li>2. Download the PNG file</li>
 						<li>3. Convert for use with your bootloader</li>
 							<ol>
-								<span class="listtitle"><strong>Hekate (Recommended)</strong></span>
-								<li>Use <a href="https://switchbrew-helper.awoo.fun/hekate-bootlogo/">this tool</a> to convert the png to the bootlogo format.</li>
 								<li>Save the image as "bootlogo.bmp" and save it in your SD root. For usage with Kosmos, place the file in the bootloader/ folder instead.</li>
 							</ol>
-							<ol>
-								<span class="listtitle"><strong>Hekate (Manual)</strong></span>
-								<li>Convert the image to a 32-bit ARGB bitmap</li>
-								<li>Rotate the image 90 degrees counter-clockwise</li>
-								<li>Save the image as "bootlogo.bmp" and save it in your SD root. For usage with Kosmos, place the file in the bootloader/ folder instead.</li>
-							</ol>
-							<span>More information about Hekate's policy on loading a bootlogo can be found <a href="https://github.com/CTCaer/hekate/blob/master/README_BOOTLOGO.md">here</a>.</span>
-					</ol>
+    				</ol>
 				</div>
 				<h4>Who made this?</h4>
 				<ul>
