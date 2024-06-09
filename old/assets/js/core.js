@@ -80,6 +80,10 @@ function redrawCanvas(){
 	// Whether to draw the custom CFW, and Copyright info, given by the user
 	var useCustomCfw = false;
 
+    var processor = $('input[name=processor]', "#settings").val();
+    var mem = $('input[name=memory]', "#settings").val();
+    var device = $('input[name=device]', "#settings").val();
+
     // Changes selection box in input for custom bootloader
 	if ($('select[name=boottool] option:selected', "#settings").val() == 'custom') {
 		$('input[name=boottool]', "#settings").show();
@@ -151,9 +155,9 @@ function redrawCanvas(){
     drawText($('input[name=type]', "#settings").val(), 64, 16);
     drawText(copyrightLine, 64, 48);
 
-    drawText("Nintendo Switch (ver " + firmwareVersion.val() + ")", 32, 160);
-    drawText("Main Processor    :   Nvidia Tegra X1 SoC", 32, 224);
-    drawText("Memory Test       :   65920K OK", 32, 256);
+    drawText(device.val() + " (ver " + firmwareVersion.val() + ")", 32, 160);
+    drawText("Main Processor    :   " + processor.val(), 32, 224);
+    drawText("Memory Test       :   " + mem.val() + " OK", 32, 256);
 
     drawText("Plug and Play BIOS Extension, v1.0A", 32, 320);
     drawText("Detecting Primary Master      ... " + emmcSize.val() + " Internal Storage", 64, 352);
