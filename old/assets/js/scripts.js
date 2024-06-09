@@ -176,9 +176,6 @@ $("#settings input, #settings select").on('change', function() {
 	// The formatted string from the previous boot variables
 	var bootloaderText = '_Hold ' + bootloaderKey + ' '+ $('select[name=firstTime] option:selected').text() +'_ to enter _' + bootloader + '_.';
 	
-    var processor = $('input[name=processor]', "#settings").val();
-    var mem = $('input[name=memory]', "#settings").val();
-    var device = $('input[name=device]', "#settings").val();
 
 	if (shouldDrawCustomBootString)
 		write(FONT_X_PADDING, CANVAS_HEIGHT - (FONT_HEIGHT * 2), bootloaderText);
