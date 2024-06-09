@@ -34,7 +34,7 @@ function App() {
 				<h1 className={styles.title}>
 					Old School Boot Screen Generator
 				</h1>
-				<h2 className={styles.subtitle}>For the Nintendo Switch</h2>
+				<h2 className={styles.subtitle}>For your desired device.</h2>
 			</div>
 			<CustomDropdown
 				customSet={setVersion}
@@ -83,6 +83,9 @@ function App() {
 				label={"Bootloader Name"}
 			/>
 			<BootScreenCanvas
+                deviceName={device}
+                memory={memory}
+                processor={processor}
 				version={version}
 				storage={storage}
 				sdSize={sdSize}
